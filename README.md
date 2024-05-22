@@ -19,51 +19,6 @@
 
 ---
 
-# **🦾** **Estrutura de Diretórios**
-
-teste_lean/
-│
-├── public/
-│   └── img/
-│       └── (arquivos públicos como imagens)
-│
-├── src/
-│   ├── app/
-│   │   ├── api/
-│   │   │   └── routes.ts
-│   │   │
-│   │   ├── components/
-│   │   │   ├── AppBar/
-│   │   │   ├── Listagem/
-│   │   │   ├── LoginForm/
-│   │   │   ├── LogoutButton/
-│   │   │   ├── Navigation/
-│   │   │   ├── Preloader/
-│   │   │   └── UserMenu/
-│   │   │
-│   │   ├── dashboard-cliente/
-│   │   │   └── page/
-│   │   │
-│   │   ├── password/
-│   │   │   └── page/
-│   │   │
-│   │   ├── globals/
-│   │   │   └── (style global)
-│   │   │
-│   │   ├── layout/
-│   │   │
-│   │   ├── page/
-│   │   │
-│   │   ├── lib
-│               └── api/            
-├── .env
-├── .gitignore
-├── package.json
-├── [README.md](http://readme.md/)
-└── tsconfig.json
-
----
-
 # **👩‍💻** **Escolhas Técnicas**
 
 1. **Framework e Bibliotecas**:
