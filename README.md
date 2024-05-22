@@ -19,51 +19,6 @@
 
 ---
 
-# **🦾** **Estrutura de Diretórios**
-
-teste_lean/
-│
-├── public/
-│   └── img/
-│       └── (arquivos públicos como imagens)
-│
-├── src/
-│   ├── app/
-│   │   ├── api/
-│   │   │   └── routes.ts
-│   │   │
-│   │   ├── components/
-│   │   │   ├── AppBar/
-│   │   │   ├── Listagem/
-│   │   │   ├── LoginForm/
-│   │   │   ├── LogoutButton/
-│   │   │   ├── Navigation/
-│   │   │   ├── Preloader/
-│   │   │   └── UserMenu/
-│   │   │
-│   │   ├── dashboard-cliente/
-│   │   │   └── page/
-│   │   │
-│   │   ├── password/
-│   │   │   └── page/
-│   │   │
-│   │   ├── globals/
-│   │   │   └── (style global)
-│   │   │
-│   │   ├── layout/
-│   │   │
-│   │   ├── page/
-│   │   │
-│   │   ├── lib
-│               └── api/            
-├── .env
-├── .gitignore
-├── package.json
-├── [README.md](http://readme.md/)
-└── tsconfig.json
-
----
-
 # **👩‍💻** **Escolhas Técnicas**
 
 1. **Framework e Bibliotecas**:
@@ -106,7 +61,7 @@ teste_lean/
 1. Clone o repositório:
     
     ```
-    git clone <https://github.com/seu-usuario/seu-repositorio.git>
+    https://github.com/AOdachowoski/teste_lean.git
     cd teste_lean
     ```
     
@@ -146,10 +101,6 @@ teste_lean/
     
     - O arquivo **`.env`** está incluso no commit por motivos de simplicidade para este desafio técnico. Ele não contém informações privadas.
     
-
-## **Estrutura do Projeto**
-
-O projeto está organizado conforme descrito na seção de estrutura de diretórios.
 
 ## **Funcionalidades**
 
