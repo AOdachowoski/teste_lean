@@ -100,6 +100,7 @@
     ## **⚠️ Observações**
     
     - O arquivo **`.env`** está incluso no commit por motivos de simplicidade para este desafio técnico. Ele não contém informações privadas.
+    - Credenciais de acesso estão disponíveis dentro do arquivo **`.env`**.
     
 
 ## **Funcionalidades**
