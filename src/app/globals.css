@@ -2,32 +2,134 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@keyframes gradient {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.search-input {
+  width: 100%;
+  max-width: 300px;
+  @media (max-width: 690px) {
+    min-width: 100%;
+  }
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+.select-control {
+  width: 100%;
+  max-width: 290px;
+  @media (max-width: 690px) {
+    min-width: 100%;
+  }
+}
+
+.status-ativo {
+  margin-top: 10px;
+  text-align: center;
+  padding: 5px;
+  border-radius: 100px;
+  width: 70px;
+  color: #46855b;
+  background: #daf4e3;
+}
+
+.status-inativo {
+  margin-top: 10px;
+  text-align: center;
+  padding: 5px;
+  border-radius: 100px;
+  width: 70px;
+  color: #e53e3e;
+  background: #fdecec;
+}
+
+.red-icon {
+  color: #e53e3e;
+}
+
+.green-icon {
+  color: #2e7d32;
+}
+
+.active-link {
+  border-bottom: 3px solid #9747ff;
+}
+
+.inactive-row {
+  background-color: #f6f6f6;
+}
+
+.position_image {
+  position: relative;
+  top: -40px;
+  left: -22px;
+}
+
+.wave {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 1000% 1000% 0 0;
+  position: fixed;
+  width: 200%;
+  height: 12em;
+  animation: wave 10s linear infinite;
+  transform: translate3d(0, 0, 0);
+  opacity: 0.8;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.wave:nth-of-type(2) {
+  bottom: -1.25em;
+  animation: wave 18s linear reverse infinite;
+  opacity: 0.8;
+}
+
+.wave:nth-of-type(3) {
+  bottom: -2.5em;
+  animation: wave 20s linear reverse infinite;
+  opacity: 0.9;
+}
+
+.wave:nth-of-type(4) {
+  bottom: -3.75em;
+  animation: wave 22s linear infinite;
+  opacity: 0.7;
+}
+
+.wave:nth-of-type(5) {
+  bottom: -5em;
+  animation: wave 24s linear reverse infinite;
+  opacity: 0.6;
+}
+
+@keyframes wave {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
