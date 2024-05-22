@@ -1,5 +1,3 @@
-# Teste Front-end Lean Saúde
-
 # **👾** **Estrutura da Aplicação**
 
 ### A aplicação será composta pelas seguintes partes principais:
@@ -33,6 +31,8 @@
 3. **Roteamento**:
     - **Next.js Routing**: Sistema de roteamento embutido no Next.js que simplifica a navegação entre as páginas da aplicação.
     
+# **🦾** **Estrutura de Diretórios**
+![image](https://github.com/AOdachowoski/teste_lean/assets/100538853/3c83b8a2-5cdf-4fe3-84fc-7c6b5dd8cff6)
 
 # **👩‍💻** **Funcionalidades e Fluxo da Aplicação**
 
