@@ -102,10 +102,6 @@
     - O arquivo **`.env`** está incluso no commit por motivos de simplicidade para este desafio técnico. Ele não contém informações privadas.
     
 
-## **Estrutura do Projeto**
-
-O projeto está organizado conforme descrito na seção de estrutura de diretórios.
-
 ## **Funcionalidades**
 
 - Tela de login com autenticação mock.
