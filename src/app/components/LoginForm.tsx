@@ -10,7 +10,7 @@ import {
 } from "@mui/material";
 import { signIn } from "next-auth/react";
 import Preloader from "./Preloader";
-import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 export default function LoginForm() {
   const [error, setError] = useState("");
@@ -18,10 +18,11 @@ export default function LoginForm() {
   const [showEmailError, setShowEmailError] = useState(false);
   const [loading, setLoading] = useState(false);
   const [redRoute, setRedRoute] = useState(false);
+  const router = useRouter();
 
   async function login(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setRedRoute(!redRoute);
+
     setLoading(true);
     setShowEmailError(false);
     setShowPasswordError(false);
@@ -34,37 +35,32 @@ export default function LoginForm() {
       password: formData.get("password"),
     };
 
-    try {
-      const result = await signIn("credentials", {
-        ...data,
-        callbackUrl: "/dashboard-cliente",
-        redirect: redRoute,
-      });
-
-      if (result.error) {
-        if (result.status === 401 || result.error === "CredentialsSignin") {
-          setShowEmailError(true);
-          setShowPasswordError(true);
-          setError("Credenciais inválidas. Por favor, tente novamente.");
+    signIn("credentials", {
+      ...data,
+      callbackUrl: "/dashboard-cliente",
+      redirect: redRoute,
+    })
+      .then((result) => {
+        if (result.error) {
+          if (result.status === 401 || result.error === "CredentialsSignin") {
+            setShowEmailError(true);
+            setShowPasswordError(true);
+            setError("Credenciais inválidas. Por favor, tente novamente.");
+          }
         } else {
-          setError(
-            "Ocorreu um erro ao tentar fazer login. Tente novamente mais tarde."
-          );
+          setRedRoute(!redRoute);
+          router.push("/dashboard-cliente");
         }
-      } else {
+      })
+      .catch((err) => {
+        console.error("Error:", err);
+        setError("Ocorreu um erro ao tentar fazer login. Tente novamente.");
+      })
+      .finally(() => {
+        setLoading(false);
         setRedRoute(!redRoute);
-        redirect("/dashboard-cliente");
-      }
-    } catch (err) {
-      console.error("Error:", err);
-      setError(
-        "Ocorreu um erro ao tentar fazer login. Tente novamente mais tarde."
-      );
-    } finally {
-      setLoading(false);
-    }
+      });
   }
-
   return (
     <form onSubmit={login}>
       <Box sx={{ position: "relative" }}>
