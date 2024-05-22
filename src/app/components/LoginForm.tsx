@@ -41,8 +41,8 @@ export default function LoginForm() {
       redirect: redRoute,
     })
       .then((result) => {
-        if (result.error) {
-          if (result.status === 401 || result.error === "CredentialsSignin") {
+        if (result?.error) {
+          if (result?.status === 401 || result?.error === "CredentialsSignin") {
             setShowEmailError(true);
             setShowPasswordError(true);
             setError("Credenciais inválidas. Por favor, tente novamente.");
